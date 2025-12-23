@@ -16,9 +16,11 @@
 .login-nav {
   @include flex(column, space-between, flex-start);
   height: 30%;
+
   &__title {
     @include page-header;
   }
+
   &__span {
     display: block;
     margin-bottom: 0.2rem;
@@ -33,8 +35,8 @@
     @include cta-btn;
     padding: 0.5rem 1.5rem;
     margin: 0.3rem 0;
-    color: colors.$primary-light;
     width: 100%;
+    border-radius: var(--radius-lg);
   }
 }
 
@@ -52,6 +54,7 @@
   height: 100vh;
   padding: 15rem 4rem;
   @include flex(row, flex-start, flex-end);
+
   &__left {
     @include flex(column, space-between, flex-start);
     height: 100%;
@@ -72,6 +75,7 @@
   &__paragraph {
     @include body;
     margin-bottom: 0.5rem;
+    color: colors.$secondary-gray;
   }
 
   &__link-container {

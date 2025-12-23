@@ -1,18 +1,33 @@
 @use "../../styles/partials/font-mixins" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/colors";
+
 .dash-nav {
   background-color: colors.$primary-light;
-  width: 25rem;
-  padding: 0.625rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  width: min(25rem, 100%);
+  padding: 0.75rem 1rem;
 
   &__link {
     @include nav-btn;
     margin-right: 1.5rem;
     color: colors.$secondary-gray;
+    padding: 0.4rem 0.55rem;
+    border-radius: var(--radius-sm);
+    transition:
+      background-color var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out),
+      transform var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      background-color: var(--color-accent-soft);
+      color: colors.$primary-dark;
+    }
 
     &.active {
       color: colors.$primary-dark;
+      background-color: var(--color-accent-soft);
     }
   }
 }

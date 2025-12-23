@@ -13,7 +13,7 @@ const notFound = () => {
         />
         <div>
           <h1 className="text-2xl">404 page not found</h1>
-          <Link href="/" className="font-serif hover:text-primaryMain">
+          <Link href="/" className="font-sans hover:text-primaryMain">
             Back to home page
           </Link>
         </div>

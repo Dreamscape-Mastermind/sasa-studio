@@ -1,4 +1,4 @@
-import Modal from "react-modal";
+import Modal from "../Modal/Modal";
 import "./ModalGeneral.scss";
 type ModalGeneralProps = {
   modalIsOpen: boolean;

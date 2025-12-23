@@ -6,10 +6,16 @@
   @include flex(row, space-between);
   padding: 0 2rem;
   height: 100vh;
+  /* Flat: remove ambient gradients */
+  background: var(--color-bg);
 
   &__logo-container {
     @include flex(column, space-between, flex-start);
     height: 17rem;
+    padding: 1.25rem;
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
   }
 
   &__img {

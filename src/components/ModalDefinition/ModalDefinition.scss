@@ -4,6 +4,8 @@
 
 .def {
   max-width: 40rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
 
   &__word {
     @include sub-header;

@@ -8,7 +8,7 @@ module.exports = {
         mono: ["var(--font-ibm-mono)"],
       },
       colors: {
-        primaryMain: "#4c4cff",
+        primaryMain: "var(--color-accent)",
       },
     },
   },

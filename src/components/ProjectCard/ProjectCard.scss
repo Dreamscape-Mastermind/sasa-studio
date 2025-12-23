@@ -7,20 +7,26 @@
   margin-bottom: 2rem;
   cursor: pointer;
 }
+
 .project {
-  margin-right: 2rem;
-  min-width: 45rem;
-  height: 35rem;
+  margin-right: 0;
+  min-width: min(45rem, 100%);
+  height: clamp(18rem, 45vw, 35rem);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   @include flex(column, space-between, flex-start);
   padding: 1rem;
-  transition: all 80ms ease-in;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition:
+    border-color var(--dur-fast) var(--ease-out);
   position: relative;
 
   &:hover {
-    transform: translateY(2rem);
+    border-color: rgba(225, 29, 46, 0.28);
   }
 
   &__title {
@@ -28,19 +34,40 @@
     z-index: 100;
     position: absolute;
     font-size: 1.875rem;
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 0.35rem 0.6rem;
+    top: 0.75rem;
+    left: 0.75rem;
   }
 
   &__author {
     position: absolute;
-    bottom: 0.5rem;
-    left: 0;
+    top: 0.75rem;
+    right: 0.75rem;
     @include body;
     font-size: 1.5rem;
+    color: rgba(11, 11, 13, 0.72);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 0.25rem 0.5rem;
   }
 
   &__details-container {
-    width: 30%;
+    width: 100%;
     opacity: 0;
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid var(--color-border);
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+    padding: 0.85rem 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity var(--dur-normal) var(--ease-out);
 
     &--shown {
       opacity: 1;
@@ -50,13 +77,17 @@
   &__caption {
     @include caption;
     font-family: var(--font-corporate-pro);
+    color: rgba(11, 11, 13, 0.72);
+    line-height: 140%;
   }
 
   &__category {
     @include chip-large;
+    color: rgba(11, 11, 13, 0.9);
   }
 
   &__date {
     @include chip-large;
+    color: rgba(11, 11, 13, 0.9);
   }
 }

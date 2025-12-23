@@ -1,5 +1,5 @@
 import "./ModalDefinition.scss";
-import Modal from "react-modal";
+import Modal from "../Modal/Modal";
 
 export type Definition = {
   partOfSpeech: string;
@@ -20,7 +20,7 @@ const ModalDefinition = ({
 }: ModalDefinitionProps) => {
   return (
     <Modal isOpen={modalIsOpen} onRequestClose={closeModal} ariaHideApp={false}>
-      <article className="def bg-white p-4">
+      <article className="def">
         <h2 className="def__word">{chosenWord}</h2>
         {definitions.map((word, index) => (
           <div className="def__wrapper">

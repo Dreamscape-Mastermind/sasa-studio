@@ -11,7 +11,7 @@ import { useReactFlow } from "reactflow";
 import { nanoid } from "nanoid";
 import getRandomCoords from "../../utils/get-random-coords";
 import { FormEvent, useState } from "react";
-import Modal from "react-modal";
+import Modal from "../Modal/Modal";
 
 const ModalInput = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -93,8 +93,9 @@ const ModalInput = () => {
       <Modal
         ariaHideApp={false}
         isOpen={modalIsOpen}
-        onRequestClose={closeModal}>
-        <article className="modal bg-white p-4">
+        onRequestClose={closeModal}
+      >
+        <article className="modal">
           <h2 className="modal__title">enter a url</h2>
           <p className="modal__paragraph">
             we currently support youtube, pinterest and spotify
@@ -104,7 +105,8 @@ const ModalInput = () => {
             onSubmit={(e) => {
               handleCreateUrlPin(e);
               closeModal();
-            }}>
+            }}
+          >
             <input
               type="text"
               name="url"

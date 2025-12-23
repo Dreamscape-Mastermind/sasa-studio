@@ -6,7 +6,7 @@ import React, { useState, useCallback } from "react";
 import { useReactFlow } from "reactflow";
 import { nanoid } from "nanoid";
 import getRandomCoords from "../../utils/get-random-coords";
-import Modal from "react-modal";
+import Modal from "../Modal/Modal";
 import DemoBtn from "../DemoBtn/DemoBtn";
 
 const ModalUpload = () => {
@@ -84,15 +84,17 @@ const ModalUpload = () => {
       <Modal
         ariaHideApp={false}
         isOpen={modalIsOpen}
-        onRequestClose={closeModal}>
-        <article className="upload bg-white">
+        onRequestClose={closeModal}
+      >
+        <article className="upload">
           <form
             encType="multipart/form-data"
             className="file-form"
             onSubmit={(e) => {
               handleCreateUploadPin(e);
               close();
-            }}>
+            }}
+          >
             {!myFiles ? (
               <>
                 <div className="file-form__left">

@@ -6,11 +6,12 @@
   @include flex(row, flex-end);
   margin-bottom: 1rem;
   width: 100%;
+
   &__btn {
     @include secondary-btn;
     @include cta-btn;
-    color: colors.$primary-light;
     padding: 0.5rem 1rem;
+    border-radius: var(--radius-lg);
   }
 }
 
@@ -18,10 +19,13 @@
   @include flex(row, space-between, flex-start);
   max-height: 100%;
   width: 100%;
+  gap: 1rem;
 
   &__nav {
     @include flex(column, flex-start, flex-start);
     background-color: colors.$primary-light;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
     height: 80vh;
     padding: 1rem 1.5rem;
   }
@@ -37,11 +41,13 @@
   &__projects {
     max-height: 80vh;
     margin-left: 1rem;
-    width: 10rem;
+    width: 100%;
     flex: 1;
+    min-width: 0;
     // padding: 0 15rem;
 
-    @include flex(column, flex-start, center);
+    /* allow cards to take full width */
+    @include flex(column, flex-start, stretch);
     overflow: scroll;
   }
 }

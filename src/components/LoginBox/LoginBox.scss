@@ -4,8 +4,10 @@
 
 .form-wrapper {
   background-color: colors.$primary-light;
-  padding: 1rem;
-  width: 20rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  width: min(24rem, 92vw);
 }
 
 .change-form {
@@ -20,12 +22,14 @@
 .form {
   &__btn {
     margin-top: 2.5rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0.7rem 1.1rem;
     @include primary-btn;
     @include cta-btn;
-    color: colors.$primary-light;
     border: none;
+    width: 100%;
+    justify-content: center;
   }
+
   &--login {
     height: 0px;
     overflow: hidden;

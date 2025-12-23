@@ -3,54 +3,65 @@
 @use "../../styles/partials/colors";
 
 .ReactModal__Overlay {
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  background-color: colors.$modal-overlay !important;
-  @include flex;
+  /* Overlay + content motion handled globally in globals.scss */
   z-index: 150;
 }
+
 .ReactModal__Content {
   background-color: transparent !important;
   border: none !important;
   @include flex(row, space-between);
   position: relative !important;
-  border-radius: 2px !important;
+  border-radius: var(--radius-lg) !important;
   overflow: visible !important;
 }
 
 .dropzone {
-  background-color: #ffffffc0;
+  background-color: rgba(255, 255, 255, 0.9);
   height: 35vh;
   @include flex(row, flex-start, flex-end);
   padding: 1rem;
-  border: 1px colors.$primary-main dashed;
+  border: 1px var(--color-accent) dashed;
+  border-radius: var(--radius-lg);
   width: 100%;
   flex: 1;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.96);
+    transform: translateY(-1px);
+  }
 }
 
 .file-form {
   @include flex(row, space-between, flex-start);
   width: 100%;
+
   &__left {
     margin-right: 1rem;
   }
+
   &__info-left {
     height: 21rem;
     @include flex(column, space-between, flex-start);
   }
+
   &__preview {
     height: 35vh;
     max-width: 40vw;
     object-fit: cover;
     object-position: center;
   }
+
   &__btn {
     @include primary-btn;
     @include cta-btn;
-    color: colors.$primary-light;
     padding: 0.6rem;
     margin-top: 1rem;
     align-self: flex-start;
+    border-radius: var(--radius-lg);
   }
 
   &__name {
@@ -76,18 +87,23 @@
 .upload {
   width: 50rem;
   padding: 2rem;
-  border-radius: 2px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
   @include flex(column, center, flex-start);
   flex: 1;
+
   &__dnd {
     @include body;
+    color: colors.$secondary-gray;
   }
+
   &__title {
     @include section-header;
     font-size: 2rem;
     color: colors.$primary-dark;
     align-self: flex-start;
   }
+
   &__cancel {
     margin-top: 1rem;
     @include secondary-btn;

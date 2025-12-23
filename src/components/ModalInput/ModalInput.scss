@@ -6,7 +6,8 @@
   width: 50rem;
   background: colors.$primary-light;
   @include flex(column, center, flex-start);
-  border-radius: 2px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
 
   &__title {
     @include section-header;
@@ -17,38 +18,36 @@
   &__paragraph {
     @include body;
     margin-bottom: 1rem;
+    color: colors.$secondary-gray;
   }
 }
+
 .url-form {
   @include flex(column);
   width: 100%;
 
   &__input {
-    padding: 0.5rem;
-    font-family: var(--font-ibm-mono);
+    padding: 0.75rem 0.9rem;
     @include text-input;
-    border: none;
-    border-bottom: 1px solid colors.$primary-dark;
-    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
     margin-bottom: 1rem;
     width: 100%;
 
     &:focus {
       outline: none;
+      border-color: colors.$primary-main;
+      box-shadow: 0 0 0 3px var(--color-accent-soft);
     }
   }
+
   &__btn {
     @include primary-btn;
     @include cta-btn;
-    color: colors.$primary-light;
     padding: 0.6rem 1rem;
     margin-top: 1rem;
     align-self: flex-start;
+    border-radius: var(--radius-lg);
   }
-}
-
-.popup-overlay {
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  background-color: colors.$modal-overlay;
 }

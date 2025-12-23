@@ -4,25 +4,36 @@
 
 .general {
   @include flex(column, space-between, flex-start);
-  padding: 0.6rem;
-  height: 20rem;
-  min-width: 30rem;
+  padding: 1.1rem 1.1rem 1rem;
+  min-width: min(34rem, 92vw);
+  gap: 1rem;
 
   &__title {
     margin-bottom: 1rem;
+    @include section-header;
   }
 
   &__buttons {
-    @include flex(column, space-between, flex-start);
-    height: 4rem;
+    @include flex(row, flex-end, center);
+    gap: 0.75rem;
+    width: 100%;
   }
+
   &__btn {
     @include primary-btn;
+    padding: 0.6rem 0.85rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    transition: background-color var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      background-color: var(--color-surface-2);
+    }
 
     &--cta {
       @include cta-btn;
-      color: colors.$primary-light;
-      padding: 0.5rem 0.7rem;
+      border: none;
     }
   }
 }

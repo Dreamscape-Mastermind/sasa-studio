@@ -1,4 +1,4 @@
-import Modal from "react-modal";
+import Modal from "../Modal/Modal";
 import Image from "next/image";
 type LoadingModalProps = {
   modalIsOpen: boolean;

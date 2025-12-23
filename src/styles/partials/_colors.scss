@@ -1,16 +1,21 @@
-$primary-main: #4c4cff;
-$primary-dark: #000;
-$primary-light: #fff;
-$primary-gray: #fbfbfb;
+/*
+  Sass variables mapped to CSS variables.
+  This keeps existing SCSS working while enabling theme refresh.
+*/
+$primary-main: var(--color-accent);
+$primary-dark: var(--color-text);
+$primary-light: var(--color-surface);
+$primary-gray: var(--color-bg);
 
-$secondary-main: #c1c4f0;
-$secondary-dark: #1f2126;
-$secondary-light: #ddd;
-$secondary-gray: #959595;
+$secondary-main: var(--color-accent-soft);
+$secondary-dark: var(--color-inverse);
+$secondary-light: var(--color-surface-2);
+$secondary-gray: var(--color-muted);
+$border: var(--color-border);
 
-$accent: #fff44d;
-$error: #ff554d;
-$success: #6ff07d;
+$accent: var(--color-accent-soft);
+$error: var(--color-accent);
+$success: #22c55e;
 
-$modal-bg: rgba(0, 0, 0, 0.2);
-$modal-overlay: rgba(0, 0, 0, 0.2);
+$modal-bg: var(--modal-overlay);
+$modal-overlay: var(--modal-overlay);

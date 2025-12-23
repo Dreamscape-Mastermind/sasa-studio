@@ -1,9 +1,8 @@
 @use "../partials/colors";
-@mixin flex(
-  $flex-direction: row,
+
+@mixin flex($flex-direction: row,
   $justify-content: center,
-  $align-items: center
-) {
+  $align-items: center) {
   display: flex;
   flex-direction: $flex-direction;
   align-items: $align-items;
@@ -12,17 +11,27 @@
 
 @mixin cta-btn {
   background-color: colors.$secondary-dark;
-  border-radius: 3px;
+  color: colors.$primary-light;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
 
   &:hover {
     background-color: colors.$primary-main;
+    border-color: rgba(255, 255, 255, 0.14);
   }
 }
 
 @mixin cta-underline {
-  color: colors.$secondary-dark;
+  color: colors.$primary-main;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-out);
 
   &:hover {
-    color: colors.$primary-main;
+    color: colors.$primary-dark;
   }
 }
